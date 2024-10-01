@@ -1,10 +1,9 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import Explore from './components/Explore';
 import LatestProject from './components/LatestProject';
 import TrendingProject from './components/TrendingProject';
-import Projectmarket from './pages/Projectmarket';
 import Othermarket from './pages/Othermarket';
 import Pools from './pages/Pools/Pools';
 import GeneralPool from './pages/Pools/GeneralPools';
@@ -19,6 +18,15 @@ import PortfolioBet from './pages/Portfolio/PortfolioBets';
 import  PortfolioProjects from './pages/Portfolio/PortfolioProjects';
 import Modal from './components/Modal';
 import './App.css';
+import SolUpAllBets from './pages/SolUpBet/SolUpAllBets';
+import SolUpNewBets from './pages/SolUpBet/SolupNewbets';
+import SolUpTrendingBets from './pages/SolUpBet/SolUpTrendingBets';
+import SolupPlaceBet from './pages/SolUpBet/SolupPlaceBet';
+import ProjectDetails from './components/ProjectDetails';
+import CoinDetails from './components/CoinDetails';
+import SolupPlaceBetRabi from './pages/SolUpBet/SolupPlaceBet';
+import StockDetails from './components/StockDetails';
+import ProjectMarket from './components/ProjectMarket';
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -49,7 +57,6 @@ function App() {
           <Route path='latest' element={<LatestProject />} />
           <Route path='trending' element={<TrendingProject />} />
           <Route path='explore' element={<Explore />} />
-          <Route path='projectmarket' element={<Projectmarket />} />
           <Route path='othermarket' element={<Othermarket />} />
           <Route path='pools' element={<Pools />} />
           <Route path='generalpool' element={<GeneralPool />} />
@@ -57,11 +64,23 @@ function App() {
           <Route path='addpoolliquidity/:poolId' element={<AddPoolLiquidity />} />
           <Route path='projectpools' element={<ProjectPools />} />
           <Route path='betpools' element={<BetPools />} />
-          <Route path='solupbet' element={<SolUpBet />} />
+          <Route path='solupallbet' element={<SolUpAllBets/>}/>
+          <Route path="/solupplacebet/:betId" element={<SolupPlaceBet />} />
+          <Route path='solupbet' element={<Navigate to="/solupallbet" />} />
+          <Route path='solupallbet' element={<SolUpAllBets/>}/>
+          <Route path='soluptrendingbets' element={<SolUpTrendingBets/>}/>
+          <Route path='solupnewbets' element={<SolUpNewBets/>}/>
+          <Route path="/placebet/:betId" element={<SolupPlaceBetRabi />} />
+          <Route path="chart" element={<SolupPlaceBetRabi />} />
           <Route path='portfolio' element={<Portfolio />} />
           <Route path='portfolioall' element={<PortfolioAll />} />
           <Route path='portfolioprojects' element={<PortfolioProjects />} />
           <Route path='portfoliobets' element={<PortfolioBet />} />
+          <Route path='projectdetails/:projectId' element={<ProjectDetails />} />
+          <Route path='coindetails/:coinId' element={<CoinDetails />} />
+          <Route path='stockdetails/:stockId' element={<StockDetails />} />
+          <Route path='projectmarket' element={<ProjectMarket />} />
+       
         </Route>
       </Routes>
 

@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "title": "Donald vs Kamala Harris",
+      "imageUrl": "/ccc.jpg",
+      "upVotes": "+30%",
+      "downVotes": "-30%",
+      "projectPrice": "3004",
+      "projectLiquidity": "3004",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, aut laborum! Quidem, suscipit? Magnam neLorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, aut laborum! Quidem, suscipit? Magnam ne"
+    },
+    {
+      "id": 2,
+      "title": "Elon Musk vs Jeff Bezos",
+      "imageUrl": "/ccc.jpg",
+      "upVotes": "+20%",
+      "downVotes": "-15%",
+      "projectPrice": "3004",
+      "projectLiquidity": "3004",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusamus veritatis soluta labore."
+    },
+    {
+      "id": 3,
+      "title": "Elon Musk vs Jeff Bezos",
+      "imageUrl": "/ccc.jpg",
+      "upVotes": "+20%",
+      "downVotes": "-15%",
+      "projectPrice": "3004",
+      "projectLiquidity": "3004",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusamus veritatis soluta labore."
+    },
+    {
+      "id": 4,
+      "title": "Elon Musk vs Jeff Bezos",
+      "imageUrl": "/ccc.jpg",
+      "upVotes": "+20%",
+      "downVotes": "-15%",
+      "projectPrice": "3004",
+      "projectLiquidity": "3004",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusamus veritatis soluta labore."
+    }
+  ]

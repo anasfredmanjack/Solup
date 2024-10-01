@@ -23,7 +23,7 @@ const Sidebar = ({ activeLink, setActiveLink, SIDEBAR_LINKS, connectWallet, conn
   useEffect(() => {
     const currentPath = location.pathname;
     
-    if (currentPath.includes('latest') || currentPath.includes('trending')) {
+    if (currentPath.includes('explore')) {
       // Highlight "Explore" if the path is related to latest or trending
       const exploreIndex = SIDEBAR_LINKS.findIndex(link => link.name === 'Explore');
       setActiveLink(exploreIndex);
@@ -31,6 +31,21 @@ const Sidebar = ({ activeLink, setActiveLink, SIDEBAR_LINKS, connectWallet, conn
       // Highlight "Portfolio" if the path is related to any portfolio sub-sections
       const portfolioIndex = SIDEBAR_LINKS.findIndex(link => link.name === 'Portfolio');
       setActiveLink(portfolioIndex);
+    }  else if (currentPath.includes('pools')) {
+      console.log("Matched Pools");
+      setActiveLink(SIDEBAR_LINKS.findIndex(link => link.name === 'Pools'));
+    }  else if (currentPath.includes('coin')) {
+      console.log("Matched Coin Market");
+      setActiveLink(SIDEBAR_LINKS.findIndex(link => link.name === 'Other Market'));
+    }  else if (currentPath.includes('stock')) {
+      console.log("Matched Stock Market");
+      setActiveLink(SIDEBAR_LINKS.findIndex(link => link.name === 'Other Market'));
+    } else if (currentPath.includes('bet')) {
+      console.log("Matched SolUp Bet");
+      setActiveLink(SIDEBAR_LINKS.findIndex(link => link.name === 'SolUpBet'));
+    } else if (currentPath.includes('project')) {
+      console.log("Matched Project Market");
+      setActiveLink(SIDEBAR_LINKS.findIndex(link => link.name === 'Project Market'));
     } else {
       const activeIndex = SIDEBAR_LINKS.findIndex(link => link.path === currentPath);
       setActiveLink(activeIndex !== -1 ? activeIndex : 0);
@@ -48,12 +63,10 @@ const Sidebar = ({ activeLink, setActiveLink, SIDEBAR_LINKS, connectWallet, conn
           </div>
           <ul className="mt-16 ml-2 md:ml-0 space-y-6">
             {SIDEBAR_LINKS.map((link, index) => {
-              // Hide 'Project Market' link
-              if (link.name === 'Project Market') return null;
+             
 
               // Determine if the link should be highlighted
-              const isActive = activeLink === index ||
-                (link.name === 'Portfolio' && location.pathname.includes('portfolio'));
+              const isActive = activeLink === index ;
 
               return (
                 <li

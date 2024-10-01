@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "title": "Donald vs Kamala Harris",
+      "imageUrl": "/ccc.jpg",
+      "longBet": "+30%",
+      "shortBet": "-30%",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, aut laborum! Quidem, suscipit? Magnam ne",
+      "buttonText": "Place Bet"
+    },
+    {
+      "id": 2,
+      "title": "Elon Musk vs Jeff Bezos",
+      "imageUrl": "/ccc.jpg",
+      "longBet": "+20%",
+      "shortBet": "-15%",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusamus veritatis soluta labore.",
+      "buttonText": "Place Bet"
+    },
+    {
+      "id": 3,
+      "title": "Bitcoin vs Ethereum",
+      "imageUrl": "/ccc.jpg",
+      "longBet": "+50%",
+      "shortBet": "-10%",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi magni earum repudiandae.",
+      "buttonText": "Place Bet"
+    },
+    {
+      "id": 4,
+      "title": "Apple vs Samsung",
+      "imageUrl": "/ccc.jpg",
+      "longBet": "+25%",
+      "shortBet": "-20%",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ratione aliquam.",
+      "buttonText": "Place Bet"
+    }
+  ]
+  

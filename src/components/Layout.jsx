@@ -6,12 +6,10 @@ import { useLocation } from 'react-router-dom'
 import { useState, useEffect} from 'react'
 
 
-
 const layout = () => {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState('');
   const [currentProject, setCurrentProject] = useState('');
-
   const [connect, setConnect] = useState(false);
 
   const connectWallet = () => {
@@ -26,8 +24,6 @@ const layout = () => {
     {id:4, path: '/pools', name:'Pools', icons: <i class="fa-solid fa-sack-dollar"></i>},
     {id:5, path: '/solupbet', name:'SolUpBet', icons: <i class="fa-solid fa-cube"></i>},
     {id:6, path: '/portfolio', name:'Portfolio', icons: <i class="fa-solid fa-bullseye"></i>},
-    {id:7, path: '/latest', name:''},
-    {id:8, path: '/trending', name:''},
   ]
 
   useEffect(() => {
@@ -35,14 +31,6 @@ const layout = () => {
     const activeIndex = SIDEBAR_LINKS.findIndex(link => link.path === currentPath);
     setActiveLink(activeIndex !== -1 ? activeIndex : 0);
 
-    if (currentPath.includes('latest')){
-      setCurrentProject('Latest')
-    }else if (currentPath.includes('trending')) {
-      setCurrentProject('Trending');
-    }
-     else {
-      setCurrentProject('');
-    }
   },
    [location.pathname]);
 

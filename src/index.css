@@ -281,12 +281,48 @@ select:focus {
 }
 .bonkpro {
   position: absolute; 
-  top: 0; 
+  top: 0;
   left: 0; /* Position the label to the top-left */
   z-index: 1; /* Ensure it stays above other content */
 }
 .bonkmom {
   position: relative; /* Ensure the parent div is relative */
+}
+thead{
+  font-weight: normal;
+}
+th, td {
+  padding: 1rem;
+  text-align: center;
+}
+#table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  overflow-x: auto;
+  margin-top: 20px;
+  font-size: .7rem;
+}
+#table-scroll {
+  max-width: 100%;
+}
+.three{
+  font-size: 1.5rem;
+}
+.solupbet h3{
+  font-size: .8rem;
+}
+.solupbet .green{
+  color: rgb(5, 236, 5);
+}
+.solupbet .red{
+  color: red;
+}
+.table-line{
+    background-color: 3px solid var(--purple);
+    height: 100%;
+    width:.25rem;
+    border-color: #9933ff;
 }
   @media (max-width: 767px){
    :root{

@@ -1,10 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "formik": "^2.4.6",
-    "react-select-country-list": "^2.2.3",
-    "yup": "^1.4.0"
-=======
   "name": "solup",
   "private": true,
   "version": "0.0.0",
@@ -38,6 +32,5 @@
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.1"
->>>>>>> 4348179b45299fb37e8faccf4f1eac619b59f1a7
   }
 }
