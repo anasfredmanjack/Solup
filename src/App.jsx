@@ -19,6 +19,7 @@ import  PortfolioProjects from './pages/Portfolio/PortfolioProjects';
 import Modal from './components/Modal';
 import './App.css';
 import SolUpAllBets from './pages/SolUpBet/SolUpAllBets';
+import SolUpNewBets from './pages/SolUpBet/SolupNewBets';
 import SolUpTrendingBets from './pages/SolUpBet/SolUpTrendingBets';
 import SolupPlaceBet from './pages/SolUpBet/SolupPlaceBets';
 import ProjectDetails from './components/ProjectDetails';
@@ -68,6 +69,7 @@ function App() {
           <Route path='solupbet' element={<Navigate to="/solupallbet" />} />
           <Route path='solupallbet' element={<SolUpAllBets/>}/>
           <Route path='soluptrendingbets' element={<SolUpTrendingBets/>}/>
+          <Route path='solupnewbets' element={<SolUpNewBets/>}/>
           <Route path="/placebet/:betId" element={<SolupPlaceBetRabi />} />
 
           <Route path='portfolio' element={<Portfolio />} />

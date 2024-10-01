@@ -101,7 +101,7 @@ const SolupPlaceBet = () => {
 
           
           {showOrderbook ? (
-            <Orderbook />
+            <div></div>
           ) : (
             <ResponsiveContainer width="100%" height={300}>
               <ComposedChart

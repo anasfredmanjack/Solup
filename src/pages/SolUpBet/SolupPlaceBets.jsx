@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import solupbetdata from '../solupbetdata.json';
-import Orderbook from './orderbook';
+
 import {
   ComposedChart,
   Bar,
@@ -101,7 +101,7 @@ const SolupPlaceBet = () => {
 
           
           {showOrderbook ? (
-            <Orderbook />
+           <div></div>
           ) : (
             <ResponsiveContainer width="100%" height={300}>
               <ComposedChart
