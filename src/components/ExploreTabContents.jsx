@@ -2,7 +2,7 @@ import React from 'react'
 import ExploreBets from './ExploreBets'
 import ExploreStocks from './ExploreStocks'
 import ExploreProjects from './ExploreProjects'
-
+import ExploreTokens from './ExploreTokens'
 
 const ExploreTabContents = ({tabData, activeTab}) => {
 const renderTab = () => {

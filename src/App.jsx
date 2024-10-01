@@ -21,7 +21,7 @@ import './App.css';
 import SolUpAllBets from './pages/SolUpBet/SolUpAllBets';
 import SolUpNewBets from './pages/SolUpBet/SolupNewbets';
 import SolUpTrendingBets from './pages/SolUpBet/SolUpTrendingBets';
-import SolupPlaceBet from './pages/SolUpBet/SolupPlaceBet';
+import SolupPlaceBet from './pages/SolUpBet/SolupPlaceBets';
 import ProjectDetails from './components/ProjectDetails';
 import CoinDetails from './components/CoinDetails';
 import SolupPlaceBetRabi from './pages/SolUpBet/SolupPlaceBet';

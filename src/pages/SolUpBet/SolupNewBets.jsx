@@ -1,10 +1,10 @@
 import React from 'react'
-import solupbetdata from '../solupbetdata.json';
+import solupbetdata from '../../json/solupbetdata.json';
 import SolupBetNav from './SolupBetNav';
 import { useNavigate } from 'react-router-dom';
 
 
-const SolupNewbet = () => {
+const SolupNewBets = () => {
   const navigate = useNavigate();
 
   const handlePlaceBet = (betId) => {
@@ -44,4 +44,4 @@ const SolupNewbet = () => {
   )
 }
 
-export default SolupNewbet;
+export default SolupNewBets;

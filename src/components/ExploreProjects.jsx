@@ -36,7 +36,7 @@ const ExploreProjects = () => {
                   <div
                     className="cursor-pointer m-auto mt-2 align-center w-full flex justify-center bg-purple-600 text-white text-sm py-1"
                     onClick={() => handleProjectVotes(project.id)}      >
-                    <h1>Place Vote</h1>
+                    <h1>Explore Project</h1>
                   </div>
                 </div>
               </div>
