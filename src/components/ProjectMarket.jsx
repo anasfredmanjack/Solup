@@ -1,5 +1,6 @@
 import React from 'react'
 import ExploreTabContents from './ExploreTabContents';
+import CreateProjectBtn from './CreateProjectBtn';
 
 const ProjectMarket = () => {
       //ExploreTabs data
@@ -22,10 +23,14 @@ const ProjectMarket = () => {
     }
 ];
   return (
+    <div>
     <ExploreTabContents 
       tabData={tabData}
       activeTab={0}
        />
+         <CreateProjectBtn/>
+       </div>
+     
   )
 }
 

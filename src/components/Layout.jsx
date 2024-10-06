@@ -42,6 +42,7 @@ const layout = () => {
       <Sidebar connectWallet={connectWallet} connect={connect} activeLink={activeLink} setActiveLink={setActiveLink} SIDEBAR_LINKS={SIDEBAR_LINKS}/>
       <div className='main w-full mt-4  md:pl-1 lg:pl-8 md:mt-0 md:pr-8 ml-0 md:ml-56 '>
         <Header connect={connect} connectWallet={connectWallet} pageTitle={currentPage} currentProject={currentProject}/>
+        
         <Outlet />
       </div>
     </div>

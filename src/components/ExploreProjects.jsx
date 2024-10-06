@@ -6,6 +6,7 @@ import io from 'socket.io-client';
 const socket = io('https://solup-api.onrender.com'); // Replace with your backend URL
 
 const ExploreProjects = () => {
+
   
 
   const navigate = useNavigate();

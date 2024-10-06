@@ -29,6 +29,7 @@ import StockDetails from './components/StockDetails';
 import ProjectMarket from './components/ProjectMarket';
 import LandingPage from './pages/LandingPage/LandingPage';
 import Footer from './components/Footer';
+import CreateProject from './components/CreateProject'
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -76,9 +77,12 @@ function App() {
           <Route path='coindetails/:coinId' element={<CoinDetails />} />
           <Route path='stockdetails/:stockId' element={<StockDetails />} />
           <Route path='projectmarket' element={<ProjectMarket />} />
+          <Route path='createproject' element={<CreateProject />} />
         </Route>
       </Routes>
+
       <Footer />
+     
       {/* Modal shown on first visit */}
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <div className='flex flex-col items-center px-10 pb-4 text-center justify-center modal'>

@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 import GeneralPool from './GeneralPools'
 import MarketPoolNav from './MarketPoolNav'
+import CreateProjectBtn from '../../components/CreateProjectBtn';
 
 const AllPools = () => {
 
@@ -105,7 +106,7 @@ const AllPools = () => {
     
     
           
-    
+          <CreateProjectBtn/>
     
     
          </div>

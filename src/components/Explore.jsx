@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import ExploreTabs from './ExploreTabs';
 import ExploreTabContents from './ExploreTabContents';
+import CreateProjectBtn from './CreateProjectBtn';
 
 const Explore = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -38,7 +39,7 @@ const Explore = () => {
       tabData={tabData}
       activeTab={activeTab}
        />
-   
+   <CreateProjectBtn/>
     </div>
   );
 };

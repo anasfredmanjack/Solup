@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import OtherMarketTabs from '../components/OtherMarketTabs';
 import OtherMarketTabContents from '../components/OtherMarketTabContents';
+import CreateProjectBtn from '../components/CreateProjectBtn';
+
 
 const Othermarket = () => {
   const [activeOtherMarketTab, setactiveOtherMarketTab] = useState(0);
@@ -29,6 +31,7 @@ const Othermarket = () => {
        tabData={tabData}
        activeOtherMarketTab={activeOtherMarketTab}
       />
+        <CreateProjectBtn/>
     </div>
   )
 }
