@@ -62,44 +62,7 @@ const GeneralPool = () => {
             </td>
             
       </tr>
-      <tr>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">$120,000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">20,000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">$12000,0000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">$1,000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">1,000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base whitespace-nowrap text-purple-500">500 USD</td>
-        <td className="py-3 px-6  flex space-x-4 whitespace-nowrap ">
-              {/*  Add to pool Button */}
-              <button className="bg-purple-200 text-purple-500 py-1 px-3 rounded hover:bg-purple-400  hover:text-white  transition">
-                Add to pool
-              </button>
-              {/* Secondary Button */}
-              <button className="bg-purple-600 text-white py-1 px-3 rounded hover:bg-purple-400 transition">
-                Borrow Liquidity
-              </button>
-            </td>
-            
-      </tr>
-      <tr>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">$120,000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">20,000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">$12000,0000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">$1,000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base">1,000</td>
-        <td class=" py-3 px-6 text-xs sm:text-sm md:text-base whitespace-nowrap text-purple-500">500 USD</td>
-        <td className="py-3 px-6  flex space-x-4 whitespace-nowrap ">
-              {/*  Add to pool Button */}
-              <button className="bg-purple-200 text-purple-500 py-1 px-3 rounded hover:bg-purple-400  hover:text-white  transition">
-                Add to pool
-              </button>
-              {/* Secondary Button */}
-              <button className="bg-purple-600 text-white py-1 px-3 rounded hover:bg-purple-400 transition">
-                Borrow Liquidity
-              </button>
-            </td>
-            
-      </tr>
+      
     </tbody>
   </table>
         </div>

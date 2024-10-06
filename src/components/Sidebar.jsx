@@ -57,7 +57,7 @@ const Sidebar = ({ activeLink, setActiveLink, SIDEBAR_LINKS, connectWallet, conn
       {windowWidth <= 767 ? (
         <Mobilesidebar connectWallet={connectWallet} connect={connect} />
       ) : (
-        <div className="w-16 sidebar md:w-56 fixed main left-0 top-0 h-screen pl-0 md:pl-8 border-r pt-6 px-4 bg-white border-none">
+        <div className="w-16 sidebar md:w-56 fixed main left-0 top-0 h-screen pl-0 md:pl-8 border-r pt-6 px-4 bg-white border-none duration-200">
           <div className="mb-10 flex">
             <img src={logo} alt="LOGO" className="w-28 sidebar-logo ml-2 md:flex" />
           </div>

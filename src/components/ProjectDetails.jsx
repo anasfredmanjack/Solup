@@ -1,40 +1,98 @@
 import React, { useEffect } from 'react'
 import {useState} from 'react';
 import { useParams } from "react-router-dom";
-import projectData from '../json/ProjectData.json'
 import { useNavigate } from "react-router-dom";
+import io from 'socket.io-client';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+const socket = io('https://solup-api.onrender.com'); //  backend aPI URL
 
 const ProjectDetails = () => {
+  const [projectData, setProjectData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { projectId } = useParams(); // Extract projectId from URL
+  const navigate = useNavigate();
+  const [projectDetailsData, setProjectDetailsData] = useState(null); // Initialize empty project details
+  const [inputValue, setInputValue] = useState('');
+  const [nextUpdateIn, setNextUpdateIn] = useState(300); // Timer for next update (5 minutes = 300 seconds)
 
-    const { projectId } = useParams(); //extract ProjectId from url here
-    const navigate = useNavigate();
-    const [projectDetailsData, setprojectDetailsData] = useState(null); //initialise empty ProjectDetails array
-    const  [inputValue, setInputValue] =  useState('');
-    const  handleChange = (event) => {
-        setInputValue(event.target.value);
+  useEffect(() => {
+    // Listen for market updates from the server
+    socket.on('trend_update', (data) => {
+      console.log('Received new market data:', data);
+      setProjectData(data.data);
+      setNextUpdateIn(300); // Reset the timer when new data is received
+    });
+
+    // Cleanup on component unmount
+    return () => {
+      socket.off('trend_update');
     };
+  }, []);
 
- 
+  // Countdown timer for the next update
+  useEffect(() => {
+    const countdown = setInterval(() => {
+      setNextUpdateIn((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
 
-    useEffect(() => {
-      //Fetch project details from json data
-    
-      const selectedProject = projectData.find(project => project.id === parseInt(projectId));
-      setprojectDetailsData(selectedProject);
- 
-}, [projectId]);
+    return () => clearInterval(countdown); // Cleanup interval on component unmount
+  }, []);
 
-      
-    if (!projectDetailsData) {
-      return <div>{projectId}</div>; // Show a loading state while data is being fetched
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+  };
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  useEffect(() => {
+    // Fetch data from API when the component mounts
+    fetch('https://solup-api.onrender.com/api/trends')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Fetched data:', data);
+        if (data && Array.isArray(data.data)) {
+          setProjectData(data.data); // Set the data from the 'data' field
+        } else {
+          console.error('Unexpected data format:', data);
+        }
+        setLoading(false); // Stop loading after data is fetched
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    // Fetch project details from the fetched data once available
+    if (projectData.length > 0) {
+      const selectedProject = projectData.find(project => project.id === projectId);
+      setProjectDetailsData(selectedProject);
+    }
+  }, [projectId, projectData]);
+
+  // Render a loading message until the data is fetched
+  if (loading) {
+    return <p>Loading projects...</p>;
+  }
+
+  // If the project data isn't found, show a not found message
+  if (!projectDetailsData) {
+    return <p>Project not found.</p>;
   }
 
   return (
  
 
     <div className='font-serif'>
+        <div className="flex flex-none justify-center items-center mt-5">
+        <p className="text-lg">Next market update in: <span className="text-purple-600">{formatTime(nextUpdateIn)}</span></p>
+      </div>
     {/* Pool Name Header And Price starts here */}
     <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start space-y-1  sm:space-y-0">
           
@@ -52,7 +110,7 @@ const ProjectDetails = () => {
           {/** Pool Price starts here **/}
           <div class="text-center sm:text-left">
             <p className="text-md sm:text-lg">Current price: 
-              <span className='text-green-500 text-sm sm:text-md'> +30%</span> <span className='text-purple-500'>${projectDetailsData.projectprice}</span>
+              <span className='text-green-500 text-sm sm:text-md'> +30%</span> <span className='text-purple-500'>${projectDetailsData.currentPrice}</span>
             </p>
           </div>
           {/** Pool Price ends here **/}
@@ -72,9 +130,9 @@ const ProjectDetails = () => {
                 
                   {/* Project  title div starts here */}
                   <div className='mt-8 sm:mt-8 border-b-4 border-purple-600 w-fit flex justify-center'>
-                        <img src={projectDetailsData.imageUrl} className='m-0 h-8 w-8 mr-1 mb-[1%] mt-[-5%]'/>
+                        <img src={projectDetailsData.image} className='m-0 h-8 w-8 mr-1 mb-[1%] mt-[-5%]'/>
                     <p className='text-lg sm:text-md md:text-2md font-semibold text-black '>
-                    {projectDetailsData.title} 
+                    {projectDetailsData.name} 
                     </p>
                     </div>
                     {/* Project title div ends here */}
@@ -106,7 +164,7 @@ const ProjectDetails = () => {
                 <tr>
                   <td class=" py-3 px-6 text-xs sm:text-sm md:text-base text-green-600"> {projectDetailsData.upVotes}</td>
                   <td class=" py-3 px-6 text-xs sm:text-sm md:text-base text-red-600">{projectDetailsData.downVotes}</td>
-                  <td class=" py-3 px-6 text-xs sm:text-sm md:text-base text-purple-600">{projectDetailsData.projectLiquidity}</td>
+                  <td class=" py-3 px-6 text-xs sm:text-sm md:text-base text-purple-600">333</td>
                       
                 </tr>
               
@@ -142,7 +200,7 @@ const ProjectDetails = () => {
               <p>Total shares:  </p>   
               <p>Due Date:  </p>   
               <button className="mt-3 bg-purple-600 w-[200px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Fund Liquidity Pool
+        Fund Project Pool
       </button>  
           </div>
           {/*Pool and Share summary ends here*/}

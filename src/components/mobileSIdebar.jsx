@@ -66,7 +66,7 @@ const Mobilesidebar = ({ connectWallet, connect }) => {
   return (
     <div className='flex justify-between items-center'>
       {toggle ? (
-        <div className='mobilesidebar w-50 fixed main left-0 top-0 h-screen border-r pt-8 px-4 bg-white border-none'>
+        <div className='mobilesidebar w-50 fixed main left-0 top-0 h-screen border-r pt-8 px-4 bg-white border-none duration-400'>
           <div className='mb-8 flex'>
             <img src={logo} alt="LOGO" className='w-28 sidebar-logo ml-2 md:flex'/>
             <i onClick={toggleMobile} className="cancel-sidebar fa-solid text-purple-600 text-xl cursor-pointer ml-20 fa-xmark"></i>
