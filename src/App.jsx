@@ -27,6 +27,8 @@ import CoinDetails from './components/CoinDetails';
 import SolupPlaceBetRabi from './pages/SolUpBet/SolupPlaceBet';
 import StockDetails from './components/StockDetails';
 import ProjectMarket from './components/ProjectMarket';
+import LandingPage from './pages/LandingPage/LandingPage';
+import Footer from './components/Footer';
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -40,20 +42,14 @@ function App() {
     setIsModalOpen(false);
   };
 
-  useEffect(() => {
-    const hasVisitedBefore = localStorage.getItem('hasVisited');
+ 
 
-    if (!hasVisitedBefore) {
-      setIsModalOpen(true);
-      localStorage.setItem('hasVisited', 'true');
-    }
-  }, []);
 
   return (
     <BrowserRouter>
       <Routes>
+      <Route index element={<LandingPage />} />
         <Route path='/' element={<Layout toggle={toggle} toggleMobile={toggleMobile} />}>
-          <Route index element={<Explore />} /> 
           <Route path='latest' element={<LatestProject />} />
           <Route path='trending' element={<TrendingProject />} />
           <Route path='explore' element={<Explore />} />
@@ -80,10 +76,9 @@ function App() {
           <Route path='coindetails/:coinId' element={<CoinDetails />} />
           <Route path='stockdetails/:stockId' element={<StockDetails />} />
           <Route path='projectmarket' element={<ProjectMarket />} />
-       
         </Route>
       </Routes>
-
+      <Footer />
       {/* Modal shown on first visit */}
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <div className='flex flex-col items-center px-10 pb-4 text-center justify-center modal'>
